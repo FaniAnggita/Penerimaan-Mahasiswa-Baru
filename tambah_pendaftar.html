@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Admin PMB</title>
+
+    <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="dist/css/adminlte.min.css">
+    <!-- SweetAlert2 -->
+    <link rel="stylesheet" href="plugins/sweetalert2/sweetalert2.min.css">
+    <!-- Toastr -->
+    <link rel="stylesheet" href="plugins/toastr/toastr.min.css">
+    <style>
+        .form-label {
+            margin-top: 15px;
+        }
+    </style>
+</head>
+
+<body class="hold-transition sidebar-mini">
+    <div class="wrapper">
+
+        <!-- Navbar -->
+        <nav class="main-header navbar navbar-expand navbar-white navbar-dark bg-dark fixed-top">
+            <!-- Left navbar links -->
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+                </li>
+                <li class="nav-item d-none d-sm-inline-block">
+                    <a href="index3.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item d-none d-sm-inline-block">
+                    <a href="#" class="nav-link">Kontak</a>
+                </li>
+            </ul>
+
+            <!-- Right navbar links -->
+            <ul class="navbar-nav ml-auto">
+                <!-- Navbar Search -->
+                <li class="nav-item">
+                    <a class="nav-link" data-widget="navbar-search" href="#" role="button">
+                        <i class="fas fa-search"></i>
+                    </a>
+                    <div class="navbar-search-block">
+                        <form class="form-inline">
+                            <div class="input-group input-group-sm">
+                                <input class="form-control form-control-navbar" type="search" placeholder="Search"
+                                    aria-label="Search">
+                                <div class="input-group-append">
+                                    <button class="btn btn-navbar" type="submit">
+                                        <i class="fas fa-search"></i>
+                                    </button>
+                                    <button class="btn btn-navbar" type="button" data-widget="navbar-search">
+                                        <i class="fas fa-times"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </li>
+
+
+
+                <li class="nav-item">
+                    <a class="nav-link" data-widget="fullscreen" href="#" role="button">
+                        <i class="fas fa-expand-arrows-alt"></i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
+                        <i class="fas fa-th-large"></i>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <!-- /.navbar -->
+
+        <!-- Main Sidebar Container -->
+        <aside class="main-sidebar sidebar-dark-primary elevation-4 position-fixed">
+            <!-- Brand Logo -->
+            <a href="index3.html" class="brand-link">
+                <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+                    style="opacity: .8">
+                <span class="brand-text font-weight-light">Admin PMB</span>
+            </a>
+
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <!-- Sidebar user panel (optional) -->
+                <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+                    <div class="image">
+                        <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+                    </div>
+                    <div class="info">
+                        <a href="#" class="d-block">Pani</a>
+                    </div>
+                </div>
+
+
+
+                <!-- Sidebar Menu -->
+                <nav class="mt-2">
+                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
+                        data-accordion="false">
+                        <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-tachometer-alt"></i>
+                                <p>
+                                    Dashboard
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link active">
+                                <i class="nav-icon fas fa-pen-alt"></i>
+                                <p>
+                                    Pendaftaran
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Tambah Baru</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Verifikasi Pendaftaran</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Laporan Pendaftaran</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-book"></i>
+                                <p>
+                                    Program Studi
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-credit-card"></i>
+                                <p>
+                                    Keuangan
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-info-circle"></i>
+                                <p>
+                                    Informasi
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Agenda</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Berita</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+                <!-- /.sidebar-menu -->
+            </div>
+            <!-- /.sidebar -->
+        </aside>
+
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            <!-- Content Header (Page header) -->
+            <div class="content-header mt-5">
+                <div class="container-fluid">
+                    <div class="row mb-2">
+                        <div class="col-sm-6">
+                            <h1 class="m-0">Tambah Pendaftar</h1>
+                        </div><!-- /.col -->
+                        <div class="col-sm-6">
+                            <ol class="breadcrumb float-sm-right">
+                                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                <li class="breadcrumb-item active">Pendaftar</li>
+                            </ol>
+                        </div><!-- /.col -->
+                    </div><!-- /.row -->
+                </div><!-- /.container-fluid -->
+            </div>
+            <!-- /.content-header -->
+
+            <!-- Main content -->
+            <div class="content">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card card-primary card-outline card-tabs">
+                                <div class="card-header p-0 pt-1 border-bottom-0">
+                                    <ul class="nav nav-tabs" id="custom-tabs-three-tab" role="tablist">
+                                        <li class="nav-item">
+                                            <a class="nav-link active" id="custom-tabs-three-info-pribadi-tab"
+                                                data-toggle="pill" href="#custom-tabs-three-info-pribadi" role="tab"
+                                                aria-controls="custom-tabs-three-info-pribadi" aria-selected="true">Info
+                                                Pribadi</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" id="custom-tabs-three-pendaftaran-tab"
+                                                data-toggle="pill" href="#custom-tabs-three-pendaftaran" role="tab"
+                                                aria-controls="custom-tabs-three-pendaftaran" aria-selected="false">
+                                                Pendaftaran</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" id="custom-tabs-three-akademis-tab" data-toggle="pill"
+                                                href="#custom-tabs-three-akademis" role="tab"
+                                                aria-controls="custom-tabs-three-akademis" aria-selected="false">Riwayat
+                                                Akademis</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" id="custom-tabs-three-keluarga-tab" data-toggle="pill"
+                                                href="#custom-tabs-three-keluarga" role="tab"
+                                                aria-controls="custom-tabs-three-keluarga"
+                                                aria-selected="false">Keluarga</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" id="custom-tabs-three-seleksi-tab" data-toggle="pill"
+                                                href="#custom-tabs-three-seleksi" role="tab"
+                                                aria-controls="custom-tabs-three-seleksi"
+                                                aria-selected="false">Seleksi</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="card-body">
+                                    <div class="tab-content" id="custom-tabs-three-tabContent">
+                                        <!-- Info Pribadi -->
+                                        <div class="tab-pane fade show active" id="custom-tabs-three-info-pribadi"
+                                            role="tabpanel" aria-labelledby="custom-tabs-three-info-pribadi-tab">
+
+                                            <form class="row g-3">
+                                                <div class="col-md-3">
+                                                    <label for="nisn" class="form-label">NISN</label>
+                                                    <input type="number" class="form-control" id="nisn">
+                                                </div>
+                                                <div class="col-md-9">
+                                                    <label for="nama" class="form-label">Nama Lengkap</label>
+                                                    <input type="text" class="form-control" id="nama">
+                                                </div>
+                                                <div class="col-12">
+                                                    <label for="nama" class="form-label">Jenis Kelamin</label><br>
+                                                    <div class="form-check form-check-inline">
+                                                        <input class="form-check-input" type="radio"
+                                                            name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                                                        <label class="form-check-label"
+                                                            for="inlineRadio1">Laki-laki</label>
+                                                    </div>
+                                                    <div class="form-check form-check-inline">
+                                                        <input class="form-check-input" type="radio"
+                                                            name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                                                        <label class="form-check-label"
+                                                            for="inlineRadio2">Perempuan</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <label for="alamat" class="form-label">Alamat</label>
+                                                    <input type="text" class="form-control" id="alamat">
+                                                </div>
+                                                <div class=" col-md-3">
+                                                    <label for="tanggalLahir" class="form-label">Tanggal Lahir</label>
+                                                    <input type="date" class="form-control" id="tanggalLahir">
+                                                </div>
+                                                <div class="col-md-9">
+                                                    <label for="tempatLahir" class="form-label">Tempat Lahir</label>
+                                                    <input type="text" class="form-control" id="tempatLahir">
+                                                </div>
+
+                                                <div class="col-md-12">
+                                                    <label for="nik" class="form-label">NIK/No. Passport</label>
+                                                    <input type="text" class="form-control" id="nik">
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label for="agama" class="form-label">Agama</label>
+                                                    <input type="text" class="form-control" id="agama">
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label for="negara" class="form-label">Kewarganegaraan</label>
+                                                    <input type="text" class="form-control" id="negara">
+                                                </div>
+
+                                                <div class="col-md-6">
+                                                    <label for="Telepon" class="form-label">Telepon</label>
+                                                    <input type="text" class="form-control" id="Telepon">
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label for="email" class="form-label">Email</label>
+                                                    <input type="email" class="form-control" id="email">
+                                                </div>
+                                                <div class="col-12 mt-4">
+                                                    <button type="submit" class="btn btn-warning">Simpan</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <!-- Akhir info Pribadi -->
+                                        <!-- Pendaftaran -->
+                                        <div class="tab-pane fade" id="custom-tabs-three-pendaftaran" role="tabpanel"
+                                            aria-labelledby="custom-tabs-three-pendaftaran-tab">
+                                            <form class="row g-3">
+                                                <div class="form-group col-md-12">
+                                                    <label for="jalurseleksi">Jalur Seleksi</label>
+                                                    <select id="jalurseleksi" class="form-control">
+                                                        <option selected>KIPK</option>
+                                                        <option>UTBK</option>
+                                                        <option>Nilai Raport</option>
+                                                        <option>Jalur Reguler</option>
+                                                    </select>
+                                                </div>
+                                                <div class="form-group col-md-12">
+                                                    <label for="prodi">Program Studi</label>
+                                                    <select id="prodi" class="form-control">
+                                                        <option selected>D3 - Rekayasa Perangkat Lunak Aplikasi</option>
+                                                        <option>D3 - Sistem Informasi Akuntansi</option>
+                                                        <option>D3 - Teknologi Komputer</option>
+                                                        <option>S1 - Informatika</option>
+                                                        <option>S1 - Sistem Informasi</option>
+                                                        <option>S1 - Teknik Komputer</option>
+                                                        <option>S1 - Bisnis Digital</option>
+                                                        <option>S1 - Manajemen Ritel</option>
+                                                    </select>
+                                                </div>
+
+                                                <div class="col-12 mt-4">
+                                                    <button type="submit" class="btn btn-warning">Simpan</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <!-- Akhir Pendaftaran -->
+                                        <!-- Akademis -->
+                                        <div class="tab-pane fade" id="custom-tabs-three-akademis" role="tabpanel"
+                                            aria-labelledby="custom-tabs-three-akademis-tab">
+                                            <form class="row">
+                                                <div class="col-md-12">
+                                                    <div class="card card-outline card-info">
+                                                        <div class="card-header">
+                                                            <h3 class="card-title">
+                                                                Data SMA/SMK/ MA
+                                                            </h3>
+                                                        </div>
+                                                        <!-- /.card-header -->
+                                                        <div class="card-body row g-3">
+                                                            <div class="col-md-6">
+                                                                <label for="asal sekolah" class="form-label">Asal
+                                                                    SMA/SMK/ MA</label>
+                                                                <input type="text" class="form-control"
+                                                                    id="asal sekolah">
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <label for="jurusan" class="form-label">Jurusan</label>
+                                                                <input type="text" class="form-control" id="jurusan">
+                                                            </div>
+                                                            <div class="col-md-12">
+                                                                <label for="alamatsekolah" class="form-label">Alamat
+                                                                    SMA/SMK/ MA</label>
+                                                                <textarea name="" class="form-control"
+                                                                    id="alamatsekolah"></textarea>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="card card-outline card-info">
+                                                        <div class="card-header">
+                                                            <h3 class="card-title">
+                                                                Ujian Nasional
+                                                            </h3>
+                                                        </div>
+                                                        <!-- /.card-header -->
+                                                        <div class="card-body row g-3">
+                                                            <div class="col-md-6">
+                                                                <label for="totalnilaiun" class="form-label">Total Nilai
+                                                                    Ujian</label>
+                                                                <input type="number" class="form-control"
+                                                                    id="totalnilaiun">
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <label for="totalmapel" class="form-label">Banyaknya
+                                                                    Mata Pelajaran Ujian
+                                                                    Nasional</label>
+                                                                <input type="number" class="form-control"
+                                                                    id="totalmapel">
+                                                            </div>
+                                                        </div>
+                                                        <div class="card-footer bg-warning">
+                                                            Lewati bagian ini bila tidak ada nilai Ujian Nasional!
+                                                        </div>
+                                                    </div>
+                                                    <div class="card card-outline card-info">
+                                                        <div class="card-header">
+                                                            <h3 class="card-title">
+                                                                Ijazah
+                                                            </h3>
+                                                        </div>
+                                                        <!-- /.card-header -->
+                                                        <div class="card-body row g-3">
+                                                            <div class="col-md-6">
+                                                                <label for="noijazah" class="form-label">No.
+                                                                    Ijazah</label>
+                                                                <input type="text" class="form-control" id="noijazah">
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <label for="tglijazah" class="form-label">Tanggal
+                                                                    Ijazah</label>
+                                                                <input type="data" class="form-control" id="tglijazah">
+                                                            </div>
+                                                        </div>
+                                                        <div class="card-footer bg-warning">
+                                                            Lewati bagian ini bila belum memiliki ijasah SMA atau
+                                                            setara!
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <!-- Akhir Akademis -->
+                                        <div class="tab-pane fade" id="custom-tabs-three-keluarga" role="tabpanel"
+                                            aria-labelledby="custom-tabs-three-keluarga-tab">
+                                            <form class="row g-3">
+                                                <div class="col-md-6">
+                                                    <label for="namaayah" class="form-label">Nama Ayah Kandung</label>
+                                                    <input type="text" class="form-control" id="namaayah">
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label for="namaibu" class="form-label">Nama Ibu Kandung</label>
+                                                    <input type="text" class="form-control" id="namaibu">
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label for="Pekerjaanayah" class="form-label">Pekerjaan Ayah
+                                                        Kandung</label>
+                                                    <select id="Pekerjaanayah" class="form-control">
+                                                        <option selected>Pilih...</option>
+                                                        <option>Pegawai Negeri</option>
+                                                        <option>Karyawan Swasta</option>
+                                                        <option>Abri</option>
+                                                        <option>Petani/ Nelayan</option>
+                                                        <option>Wiraswasta</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label for="Pekerjaanibu" class="form-label">Pekerjaan Ibu
+                                                        Kandung</label>
+                                                    <select id="Pekerjaanibu" class="form-control">
+                                                        <option selected>Pilih...</option>
+                                                        <option>Pegawai Negeri</option>
+                                                        <option>Karyawan Swasta</option>
+                                                        <option>Abri</option>
+                                                        <option>Petani/ Nelayan</option>
+                                                        <option>Wiraswasta</option>
+                                                    </select>
+                                                </div>
+
+                                                <div class="col-md-12">
+                                                    <label for="alamat" class="form-label">Alamat Lengkap Wali</label>
+                                                    <textarea name="" class="form-control" id="alamat"></textarea>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label for="penghasilan" class="form-label">Total Penghasilan Ortu
+                                                        Per Bulan</label>
+                                                    <input type="number" class="form-control" id="penghasilan">
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label for="tanggungan" class="form-label">Jumlah Orang/anak yang
+                                                        Masih
+                                                        Dibiayai</label>
+                                                    <input type="number" class="form-control" id="tanggungan">
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label for="teleponwali" class="form-label">Telepon Orangtua Wali
+                                                    </label>
+                                                    <input type="text" class="form-control" id="teleponwali">
+                                                </div>
+
+                                                <div class="col-md-6">
+                                                    <label for="emailwali" class="form-label">Email Orangtua Wali
+                                                    </label>
+                                                    <input type="email" class="form-control" id="emailwali">
+                                                </div>
+
+
+
+                                                <div class="col-12 mt-4">
+                                                    <button type="submit" class="btn btn-warning">Simpan</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="tab-pane fade" id="custom-tabs-three-seleksi" role="tabpanel"
+                                            aria-labelledby="custom-tabs-three-seleksi-tab">
+                                            Seleksi
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /.card -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /.content -->
+        </div>
+        <!-- /.content-wrapper -->
+
+        <!-- Control Sidebar -->
+        <aside class="control-sidebar control-sidebar-dark">
+            <!-- Control sidebar content goes here -->
+            <div class="p-3">
+                <h5>Title</h5>
+                <p>Sidebar content</p>
+            </div>
+        </aside>
+        <!-- /.control-sidebar -->
+
+        <!-- Main Footer -->
+        <footer class="main-footer">
+            <!-- To the right -->
+            <div class="float-right d-none d-sm-inline">
+                Proyek 3
+            </div>
+            <!-- Default to the left -->
+            <strong>203110026 - Fani Anggita</strong>
+        </footer>
+    </div>
+    <!-- ./wrapper -->
+
+    <!-- REQUIRED SCRIPTS -->
+
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
+        integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
+        crossorigin="anonymous"></script>
+    <!-- AdminLTE App -->
+    <script src="dist/js/adminlte.min.js"></script>
+    <script src="plugins/chart.js/Chart.min.js"></script>
+    <script src="dist/js/pages/dashboard3.js"></script>
+
+    <!-- Bootstrap 4 -->
+    <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- AdminLTE App -->
+
+
+</body>
+
+</html>
