@@ -1,5 +1,8 @@
 <!DOCTYPE html>
-
+<!--
+This is a starter template page. Use this page to start your new project from
+scratch. This page gets rid of all links and provides the needed markup only.
+-->
 <html lang="en">
 
 <head>
@@ -14,15 +17,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="dist/css/adminlte.min.css">
-    <!-- SweetAlert2 -->
-    <link rel="stylesheet" href="plugins/sweetalert2/sweetalert2.min.css">
-    <!-- Toastr -->
-    <link rel="stylesheet" href="plugins/toastr/toastr.min.css">
-    <style>
-        .form-label {
-            margin-top: 15px;
-        }
-    </style>
 </head>
 
 <body class="hold-transition sidebar-mini">
@@ -114,7 +108,7 @@
                         <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="#" class="nav-link ">
                                 <i class="nav-icon fas fa-tachometer-alt"></i>
                                 <p>
                                     Dashboard
@@ -122,7 +116,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link ">
+                            <a href="#" class="nav-link active">
                                 <i class="nav-icon fas fa-pen-alt"></i>
                                 <p>
                                     Pendaftaran
@@ -143,7 +137,7 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link">
+                                    <a href="#" class="nav-link active">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Laporan Pendaftaran</p>
                                     </a>
@@ -151,7 +145,7 @@
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link active">
+                            <a href="#" class="nav-link">
                                 <i class="nav-icon fas fa-book"></i>
                                 <p>
                                     Program Studi
@@ -203,64 +197,61 @@
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1 class="m-0">Program Studi</h1>
+                            <h1 class="m-0">Laporan Pendaftar</h1>
                         </div><!-- /.col -->
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
                                 <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                <li class="breadcrumb-item active">Prodi</li>
+                                <li class="breadcrumb-item active">Laporan Pendaftar</li>
                             </ol>
                         </div><!-- /.col -->
                     </div><!-- /.row -->
                 </div><!-- /.container-fluid -->
             </div>
             <!-- /.content-header -->
-
             <!-- Main content -->
             <div class="content">
                 <div class="container-fluid">
+                    <!-- table -->
                     <div class="row">
-                        <!-- Form Tambah Prodi -->
                         <div class="col-12">
-                            <h4>Tambah Prodi</h4>
-                            <form class="row g-3">
-                                <div class="form-group col-md-6">
-                                    <label for="prodi" class="form-label">Program Studi</label>
-                                    <input type="text" class="form-control" id="prodi">
-                                </div>
-                                <div class="form-group col-md-6">
-                                    <label for="Fakultas" class="form-label">Fakultas</label>
-                                    <input type="text" class="form-control" id="Fakultas">
-                                </div>
-
-                                <div class="col-12 mt-2">
-                                    <button type="submit" class="btn btn-warning">Simpan</button>
-                                </div>
-                            </form>
-                        </div>
-                        <!-- AkhirForm Tambah Prodi -->
-                    </div>
-                    <div class="row mt-4">
-                        <div class="col-12">
-                            <h4>Tabel Prodi</h4>
+                            <!-- MABA BAR CHART -->
                             <div class="card card-dark">
                                 <div class="card-header">
-                                    <h3 class="card-title">Tabel Program Studi</h3>
+                                    <h3 class="card-title">Tabel Pendaftaran atau Mahasiswa Baru</h3>
                                 </div>
                                 <div class="card-body">
                                     <!-- Form Cari -->
                                     <form>
                                         <div class="form-row">
-                                            <div class="form-group col-md-6">
+                                            <div class="form-group col-md-3">
                                                 <label for="inputCity">Kata Kunci</label>
                                                 <input type="search" class="form-control" id="inputCity">
                                             </div>
-                                            <div class="form-group col-md-6">
-                                                <label for="inputState">Fakultas</label>
+                                            <div class="form-group col-md-3">
+                                                <label for="inputState">Status</label>
                                                 <select id="inputState" class="form-control">
                                                     <option selected>Semua</option>
-                                                    <option>FTI</option>
-                                                    <option>FMB</option>
+                                                    <option>Tervirifikasi</option>
+                                                    <option>Menunggu Verifikasi</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group col-md-3">
+                                                <label for="jalurseleksi">Jalur Seleksi</label>
+                                                <select id="jalurseleksi" class="form-control">
+                                                    <option selected>KIPK</option>
+                                                    <option>UTBK</option>
+                                                    <option>Nilai Raport</option>
+                                                    <option>Jalur Reguler</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group col-md-3">
+                                                <label for="inputState">Periode</label>
+                                                <select id="inputState" class="form-control">
+                                                    <option selected>Semua</option>
+                                                    <option>2023/2024</option>
+                                                    <option>2022/2023</option>
+                                                    <option>2021/2022</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -269,53 +260,51 @@
                                 </div>
                                 <!-- /.card-body -->
                                 <div class="card-body table-responsive">
-                                    <table class="table table-bordered text-center">
+                                    <table class="table table-bordered">
                                         <thead>
                                             <tr>
-                                                <th>ID</th>
-                                                <th>Nama Prodi</th>
-                                                <th>Fakultas</th>
-                                                <th>Tanggal Dibuat</th>
-                                                <th>Aksi</th>
+                                                <th style="width: 10px">#</th>
+                                                <th>NISN</th>
+                                                <th>Nama</th>
+                                                <th>Asal Sekolah</th>
+                                                <th>Jalur Seleksi</th>
+                                                <th style="width: 60px;">Status</th>
+                                                <th></th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <td>1</td>
-                                                <td>Rekayasa Perangkat Lunak Aplikasi</td>
-                                                <td>Teknologi Informasi</td>
-                                                <td>10/01/2023</td>
-                                                <td>
+                                                <td>1.</td>
+                                                <td>231123</td>
+                                                <td>Budi</td>
+                                                <td>SMKN 1 Wonosari</td>
+                                                <td>Nilai Raport</td>
+                                                <td><span class="badge bg-success w-100">Terverifikasi</span></td>
+                                                <td class="text-center">
+                                                    <a href="#"><i class="fas fa-eye fa-lg text-primary"></i></a>
                                                     <a href="#"><i class="fas fa-edit fa-lg text-warning"></i></a>
                                                     <a href="#"><i class="fas fa-trash fa-lg text-danger"></i></a>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td>2</td>
-                                                <td>Sistem Informasi Akuntansi</td>
-                                                <td>Teknologi Informasi</td>
-                                                <td>10/01/2023</td>
-                                                <td>
+                                                <td>2.</td>
+                                                <td>245632</td>
+                                                <td>Joni</td>
+                                                <td>SMKN 2 Sleman</td>
+                                                <td>Seleksi Mandiri</td>
+                                                <td><span class="badge bg-warning w-100">Menunggu Verifikasi</span></td>
+                                                <td class="text-center">
+                                                    <a href="#"><i class="fas fa-eye fa-lg text-primary"></i></a>
                                                     <a href="#"><i class="fas fa-edit fa-lg text-warning"></i></a>
                                                     <a href="#"><i class="fas fa-trash fa-lg text-danger"></i></a>
                                                 </td>
                                             </tr>
-                                            <tr>
-                                                <td>3</td>
-                                                <td>Teknologi Komputer</td>
-                                                <td>Teknologi Informasi</td>
-                                                <td>10/01/2023</td>
-                                                <td>
-                                                    <a href="#"><i class="fas fa-edit fa-lg text-warning"></i></a>
-                                                    <a href="#"><i class="fas fa-trash fa-lg text-danger"></i></a>
-                                                </td>
-                                            </tr>
-
                                         </tbody>
                                     </table>
                                 </div>
                                 <!-- /.card-body -->
                                 <div class="card-footer clearfix">
+                                    <button type="button" class="btn btn-warning">Cetak</button>
                                     <ul class="pagination pagination-sm m-0 float-right">
                                         <li class="page-item"><a class="page-link" href="#">&laquo;</a></li>
                                         <li class="page-item"><a class="page-link" href="#">1</a></li>
@@ -325,8 +314,10 @@
                                     </ul>
                                 </div>
                             </div>
+                            <!-- /.card -->
                         </div>
                     </div>
+                    <!-- akhir table -->
                 </div>
             </div>
             <!-- /.content -->
@@ -367,11 +358,6 @@
     <script src="dist/js/adminlte.min.js"></script>
     <script src="plugins/chart.js/Chart.min.js"></script>
     <script src="dist/js/pages/dashboard3.js"></script>
-
-    <!-- Bootstrap 4 -->
-    <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <!-- AdminLTE App -->
-
 
 </body>
 
