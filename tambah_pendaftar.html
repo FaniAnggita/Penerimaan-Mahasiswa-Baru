@@ -248,6 +248,24 @@
                                                 aria-controls="custom-tabs-three-keluarga"
                                                 aria-selected="false">Keluarga</a>
                                         </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" id="custom-tabs-three-seleksi-tab" data-toggle="pill"
+                                                href="#custom-tabs-three-seleksi" role="tab"
+                                                aria-controls="custom-tabs-three-seleksi" aria-selected="false">Seleksi
+                                                Berkas</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" id="custom-tabs-three-pembayaran-tab" data-toggle="pill"
+                                                href="#custom-tabs-three-pembayaran" role="tab"
+                                                aria-controls="custom-tabs-three-pembayaran"
+                                                aria-selected="false">Pembayaran</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" id="custom-tabs-three-verifikasi-tab" data-toggle="pill"
+                                                href="#custom-tabs-three-verifikasi" role="tab"
+                                                aria-controls="custom-tabs-three-verifikasi"
+                                                aria-selected="false">Verifikasi</a>
+                                        </li>
                                     </ul>
                                 </div>
                                 <div class="card-body">
@@ -255,7 +273,6 @@
                                         <!-- Info Pribadi -->
                                         <div class="tab-pane fade show active" id="custom-tabs-three-info-pribadi"
                                             role="tabpanel" aria-labelledby="custom-tabs-three-info-pribadi-tab">
-
                                             <form class="row g-3">
                                                 <div class="col-md-3">
                                                     <label for="nisn" class="form-label">NISN</label>
@@ -442,6 +459,7 @@
                                             </form>
                                         </div>
                                         <!-- Akhir Akademis -->
+                                        <!-- Keluarga -->
                                         <div class="tab-pane fade" id="custom-tabs-three-keluarga" role="tabpanel"
                                             aria-labelledby="custom-tabs-three-keluarga-tab">
                                             <form class="row g-3">
@@ -504,14 +522,138 @@
                                                     </label>
                                                     <input type="email" class="form-control" id="emailwali">
                                                 </div>
+                                                <div class="col-12 mt-4">
+                                                    <button type="submit" class="btn btn-warning">Simpan</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <!-- Akhir keluarga -->
+                                        <!-- Berkas Seleksi -->
+                                        <div class="tab-pane fade" id="custom-tabs-three-seleksi" role="tabpanel"
+                                            aria-labelledby="custom-tabs-three-seleksi-tab">
+                                            <div class="card-header bg-primary">
+                                                <h3 class="card-title">
+                                                    Seleksi yang dipilih <b>UTBK</b>
+                                                </h3>
+                                            </div>
+                                            <form class="row g-3">
+                                                <div class="col-md-6">
+                                                    <label for="JalurUTBK" class="form-label">Jalur UTBK</label>
+                                                    <select id="JalurUTBK" class="form-control">
+                                                        <option selected>Pilih...</option>
+                                                        <option>Saintek</option>
+                                                        <option>Soshum</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label for="Sertifikatutbk" class="form-label">Sertifikat
+                                                        UTBK</label>
+                                                    <input type="file" class="form-control" id="Sertifikatutbk">
+                                                </div>
+                                                <div class="col-12 mt-4">
+                                                    <div class="card-header bg-secondary">
+                                                        <h4 class="card-title">
+                                                            Nilai TPS</b>
+                                                        </h4>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label for="nalar" class="form-label">Kemampuan Penalaran
+                                                        Umum</label>
+                                                    <input type="text" class="form-control" id="nalar">
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label for="pk" class="form-label">Pengetahuan
+                                                        Kuantitatif</label>
+                                                    <input type="text" class="form-control" id="pk">
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label for="pk" class="form-label">Pengetahuan
+                                                        dan Pemahaman Umum</label>
+                                                    <input type="text" class="form-control" id="pk">
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label for="bacatulis" class="form-label">Kemampuan Baca dan
+                                                        Tulis</label>
+                                                    <input type="text" class="form-control" id="bacatulis">
+                                                </div>
+                                                <div class="col-12 mt-4">
+                                                    <div class="card-header bg-secondary">
+                                                        <h4 class="card-title">
+                                                            Nilai TKA</b>
+                                                        </h4>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <label for="Matematika" class="form-label">Matematika
+                                                        Saintek</label>
+                                                    <input type="text" class="form-control" id="Matematika">
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <label for="fisika" class="form-label">Fisika
+                                                    </label>
+                                                    <input type="text" class="form-control" id="fisika">
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <label for="kimia" class="form-label">Kimia
+                                                    </label>
+                                                    <input type="text" class="form-control" id="kimia">
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <label for="biologi" class="form-label">Biologi
+                                                    </label>
+                                                    <input type="text" class="form-control" id="biologi">
+                                                </div>
+                                                <div class="col-12 mt-4">
+                                                    <button type="submit" class="btn btn-warning">Simpan</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <!-- Akhir Seleksi Berkas -->
+                                        <!-- pembayaran -->
+                                        <div class="tab-pane fade" id="custom-tabs-three-pembayaran" role="tabpanel"
+                                            aria-labelledby="custom-tabs-three-pembayaran-tab">
+                                            <div class="card-header bg-primary">
+                                                <h3 class="card-title">
+                                                    Silahkan Upload Bukti Transfer Pendaftaran</b>
+                                                </h3>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label for="transfer" class="form-label">Bukti Tranfer</label>
+                                                <input type="text" class="form-control" id="transfer">
+                                            </div>
 
-
+                                            <div class="col-12 mt-4">
+                                                <button type="submit" class="btn btn-warning">Simpan</button>
+                                            </div>
+                                            </form>
+                                        </div>
+                                        <!-- Akhir pembayaran -->
+                                        <!-- Verifikasi -->
+                                        <div class="tab-pane fade" id="custom-tabs-three-verifikasi" role="tabpanel"
+                                            aria-labelledby="custom-tabs-three-verifikasi-tab">
+                                            <div class="card-header bg-danger">
+                                                <h3 class="card-title">
+                                                    Silahkan Malakukan Verifikasi Pendaftar</b>
+                                                </h3>
+                                            </div>
+                                            <form class="row g-3">
+                                                <div class="col-md-12">
+                                                    <label for="JalurUTBK" class="form-label">Ambil Tindakan</label>
+                                                    <select id="JalurUTBK" class="form-control">
+                                                        <option>Lolos</option>
+                                                        <option>Tidak Lolos</option>
+                                                        <option>Dibatalkan</option>
+                                                    </select>
+                                                </div>
 
                                                 <div class="col-12 mt-4">
                                                     <button type="submit" class="btn btn-warning">Simpan</button>
                                                 </div>
                                             </form>
                                         </div>
+                                        <!-- Akhir verifikasi -->
+
                                     </div>
                                 </div>
                                 <!-- /.card -->
