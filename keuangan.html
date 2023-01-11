@@ -1,8 +1,5 @@
 <!DOCTYPE html>
-<!--
-This is a starter template page. Use this page to start your new project from
-scratch. This page gets rid of all links and provides the needed markup only.
--->
+
 <html lang="en">
 
 <head>
@@ -17,6 +14,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="dist/css/adminlte.min.css">
+    <!-- SweetAlert2 -->
+    <link rel="stylesheet" href="plugins/sweetalert2/sweetalert2.min.css">
+    <!-- Toastr -->
+    <link rel="stylesheet" href="plugins/toastr/toastr.min.css">
+    <style>
+        .form-label {
+            margin-top: 15px;
+        }
+    </style>
 </head>
 
 <body class="hold-transition sidebar-mini">
@@ -108,7 +114,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
                         <li class="nav-item">
-                            <a href="#" class="nav-link ">
+                            <a href="#" class="nav-link">
                                 <i class="nav-icon fas fa-tachometer-alt"></i>
                                 <p>
                                     Dashboard
@@ -116,7 +122,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link active">
+                            <a href="#" class="nav-link ">
                                 <i class="nav-icon fas fa-pen-alt"></i>
                                 <p>
                                     Pendaftaran
@@ -137,7 +143,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link active">
+                                    <a href="#" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Laporan Pendaftaran</p>
                                     </a>
@@ -145,7 +151,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="#" class="nav-link ">
                                 <i class="nav-icon fas fa-book"></i>
                                 <p>
                                     Program Studi
@@ -153,7 +159,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="#" class="nav-link active">
                                 <i class="nav-icon fas fa-credit-card"></i>
                                 <p>
                                     Keuangan
@@ -197,28 +203,27 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1 class="m-0">Laporan Pendaftar</h1>
+                            <h1 class="m-0">Keuangan</h1>
                         </div><!-- /.col -->
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
                                 <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                <li class="breadcrumb-item active">Laporan Pendaftar</li>
+                                <li class="breadcrumb-item active">keuangan</li>
                             </ol>
                         </div><!-- /.col -->
                     </div><!-- /.row -->
                 </div><!-- /.container-fluid -->
             </div>
             <!-- /.content-header -->
+
             <!-- Main content -->
             <div class="content">
                 <div class="container-fluid">
-                    <!-- table -->
                     <div class="row">
                         <div class="col-12">
-                            <!-- MABA BAR CHART -->
                             <div class="card card-dark">
                                 <div class="card-header">
-                                    <h3 class="card-title">Tabel Pendaftaran atau Mahasiswa Baru</h3>
+                                    <h3 class="card-title">Tabel Bukti Pembayaran</h3>
                                 </div>
                                 <div class="card-body">
                                     <!-- Form Cari -->
@@ -229,21 +234,20 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                 <input type="search" class="form-control" id="inputCity">
                                             </div>
                                             <div class="form-group col-md-3">
-                                                <label for="inputState">Status</label>
+                                                <label for="inputState">Prodi</label>
                                                 <select id="inputState" class="form-control">
                                                     <option selected>Semua</option>
                                                     <option>Lolos</option>
                                                     <option>Tidak Lolos</option>
-                                                    <option>Proses</option>
+                                                    <option>Dibatalkan</option>
                                                 </select>
                                             </div>
                                             <div class="form-group col-md-3">
-                                                <label for="jalurseleksi">Jalur Seleksi</label>
-                                                <select id="jalurseleksi" class="form-control">
-                                                    <option selected>KIPK</option>
-                                                    <option>UTBK</option>
-                                                    <option>Nilai Raport</option>
-                                                    <option>Jalur Reguler</option>
+                                                <label for="inputState">Fakultas</label>
+                                                <select id="inputState" class="form-control">
+                                                    <option selected>Semua</option>
+                                                    <option>FTI</option>
+                                                    <option>FMB</option>
                                                 </select>
                                             </div>
                                             <div class="form-group col-md-3">
@@ -259,47 +263,57 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                     </form>
                                     <!-- Akhir Form Cari -->
                                 </div>
+
+
                                 <!-- /.card-body -->
                                 <div class="card-body table-responsive">
-                                    <table class="table table-bordered">
+                                    <table class="table table-bordered text-center">
                                         <thead>
                                             <tr>
-                                                <th style="width: 10px">#</th>
-                                                <th>NISN</th>
+                                                <th>NIM</th>
                                                 <th>Nama</th>
-                                                <th>Asal Sekolah</th>
-                                                <th>Jalur Seleksi</th>
-                                                <th style="width: 60px;">Status</th>
-                                                <th></th>
+                                                <th>Prodi</th>
+                                                <th>Periode</th>
+                                                <th>Jumlah Bayar</th>
+                                                <th>Tanggal Bayar</th>
+                                                <th>Aksi</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <td>1.</td>
-                                                <td>231123</td>
-                                                <td>Budi</td>
-                                                <td>SMKN 1 Wonosari</td>
-                                                <td>Nilai Raport</td>
-                                                <td><span class="badge bg-success w-100">Lolos</span></td>
-                                                <td class="text-center">
+                                                <td>1001</td>
+                                                <td>Joni</td>
+                                                <td>Teknologi Informasi</td>
+                                                <td>2021/2022</td>
+                                                <td>250000</td>
+                                                <td>03/05/2021</td>
+                                                <td>
                                                     <a href="#"><i class="fas fa-eye fa-lg text-primary"></i></a>
                                                     <a href="#"><i class="fas fa-edit fa-lg text-warning"></i></a>
                                                     <a href="#"><i class="fas fa-trash fa-lg text-danger"></i></a>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td>2.</td>
-                                                <td>245632</td>
-                                                <td>Joni</td>
-                                                <td>SMKN 2 Sleman</td>
-                                                <td>Seleksi Mandiri</td>
-                                                <td><span class="badge bg-warning w-100">Proses</span></td>
-                                                <td class="text-center">
+                                                <td>1002</td>
+                                                <td>Dora</td>
+                                                <td>Rekayasa Perangkat Lunak Aplikasi</td>
+                                                <td>2021/2022</td>
+                                                <td>250000</td>
+                                                <td>03/05/2021</td>
+                                                <td>
                                                     <a href="#"><i class="fas fa-eye fa-lg text-primary"></i></a>
                                                     <a href="#"><i class="fas fa-edit fa-lg text-warning"></i></a>
                                                     <a href="#"><i class="fas fa-trash fa-lg text-danger"></i></a>
                                                 </td>
                                             </tr>
+                                            <tr>
+                                                <td colspan="7"></td>
+                                            </tr>
+                                            <tr>
+                                                <td><b>Total</b></td>
+                                                <td colspan="6" class="text-left"><b>Rp. 15.000.000</b></td>
+                                            </tr>
+
                                         </tbody>
                                     </table>
                                 </div>
@@ -315,10 +329,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                     </ul>
                                 </div>
                             </div>
-                            <!-- /.card -->
                         </div>
                     </div>
-                    <!-- akhir table -->
                 </div>
             </div>
             <!-- /.content -->
@@ -359,6 +371,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <script src="dist/js/adminlte.min.js"></script>
     <script src="plugins/chart.js/Chart.min.js"></script>
     <script src="dist/js/pages/dashboard3.js"></script>
+
+    <!-- Bootstrap 4 -->
+    <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- AdminLTE App -->
+
 
 </body>
 
